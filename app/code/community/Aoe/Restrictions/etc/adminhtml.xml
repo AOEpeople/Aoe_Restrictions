@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <web>
+                                        <children>
+                                            <restriction translate="title">
+                                                <title>Website Restrictions</title>
+                                                <sort_order>5000</sort_order>
+                                            </restriction>
+                                        </children>
+                                    </web>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

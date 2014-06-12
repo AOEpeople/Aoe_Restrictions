@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <web>
+            <groups>
+                <restriction translate="label">
+                    <label>Website Restrictions</label>
+                    <sort_order>5000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <fields>
+                        <routes_mode translate="label">
+                            <label>Route Restriction Mode</label>
+                            <sort_order>100</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Aoe_Restrictions/Config_Source_Mode</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </routes_mode>
+                        <routes translate="label comment">
+                            <label>Route Names</label>
+                            <comment>Route names separated by a space, new-line, or comma</comment>
+                            <sort_order>150</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </routes>
+                        <actions_mode translate="label">
+                            <label>Full Action Restriction Mode</label>
+                            <sort_order>200</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Aoe_Restrictions/Config_Source_Mode</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </actions_mode>
+                        <actions translate="label comment">
+                            <label>Full Action Names</label>
+                            <comment>Full action names separated by a space, new-line, or comma</comment>
+                            <sort_order>250</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </actions>
+                    </fields>
+                </restriction>
+            </groups>
+        </web>
+    </sections>
+</config>
