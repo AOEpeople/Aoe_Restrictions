@@ -17,6 +17,8 @@ class Aoe_Restrictions_Model_Observer
             return;
         }
 
+        $this->checkHttpAuth();
+
         // Default blocking action
         $block = false;
 
@@ -46,6 +48,23 @@ class Aoe_Restrictions_Model_Observer
                 ->setActionName('noroute')
                 ->setDispatched(false)
                 ->setParam(self::SKIP_PARAMETER_NAME, true);
+        }
+    }
+
+    protected function checkHttpAuth()
+    {
+        if (!Mage::getStoreConfig('web/restriction/http_auth_enable')) {
+            return true;
+        }
+
+        if (empty($_SERVER['PHP_AUTH_USER']) || empty($_SERVER['PHP_AUTH_PW'])
+            || $_SERVER['PHP_AUTH_USER'] !== Mage::getStoreConfig('web/restriction/http_auth_user')
+            || $_SERVER['PHP_AUTH_PW'] !== Mage::getStoreConfig('web/restriction/http_auth_pass')
+            ) {
+            header('WWW-Authenticate: Basic realm="Magento"');
+            header('HTTP/1.0 401 Unauthorized');
+            echo 'Access Denied';
+            exit;
         }
     }
 
