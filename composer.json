@@ -1,15 +1,18 @@
 {
-    "name": "AOEpeople/Aoe_Restrictions",
+    "name": "aoepeople/aoe_restrictions",
+    "description": "This Magento module provides white-list and black-list capabilities for frontend requests.",
     "type": "magento-module",
-    "description": "This module provice white-list and black-list capability on frontend requests.",
-    "require": {
-        "magento-hackathon/magento-composer-installer": "dev-master"
-    },
+    "keywords": [
+        "magento"
+    ],
     "license": "OSL-3.0",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
     "authors": [
         {
             "name": "Lee Saferite",
-            "homepage": "[first].[last]@aoe.com"
+            "homepage": "lee.saferite@aoe.com"
         }
     ]
 }
